@@ -2,9 +2,12 @@
 
 Ad Ease is an ads and marketing based company helping businesses elicit maximum clicks @ minimum cost. Ad Ease is an ad infrastructure to help businesses promote themselves easily, effectively, and economically. The interplay of 3 AI modules - Design, Dispense, and Decipher, come together to make it this an end-to-end 3 step process digital advertising solution for all.
 
+
 Clients of Ad ease belong to different regions. As per the business problem, they need data on how their ads will perform on pages in different languages. We were provided with the data of 145k Wikipedia pages along with their view count for 550 days  from 2015-07-01 to 2016-12-31. We as a data science team were tasked to forecast the number of views for each language so that we can predict and optimize the ad placement for Ad ease clients.
 
+
 It was a simple data frame which had data of  145k Wikipedia pages along with their view count for 550 days from 2015-07-01 to 2016-12-31.Extracted necessary information from the page name viz. title, language, access type, and access origin. Missing values were imputed and outliers were treated. 
+
 
 With the help of given data, I built multiple forecasting models viz. ARIMA, SARIMAX, and Prophet for all pages combined in each language.
 
@@ -28,8 +31,11 @@ With the help of given data, I built multiple forecasting models viz. ARIMA, SAR
 
 • Depending on the type of language data, either ARIMA, SARIMAX or Prophet gave the best forecast. I got my best forecast of 4.5% on chinese data set using Prophet algorithm.
 
+
 To whoever reads this, I hope my insights and recommendations from this case study were meaningful.
 
+
 Thank you,
+
 Krishna
 
