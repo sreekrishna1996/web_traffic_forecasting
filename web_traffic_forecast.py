@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import datetime
 import pickle
+import statsmodels
 
 models = {'Chinese' : pickle.load(open('chinese.pkl', 'rb')), 
         'French' : pickle.load(open('french.pkl', 'rb')), 
