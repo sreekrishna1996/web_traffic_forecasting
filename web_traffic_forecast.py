@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import datetime
 import pickle
-import matplotlib.pyplot as plt
 
 models = {'Chinese' : pickle.load(open('chinese.pkl', 'rb')), 
         'French' : pickle.load(open('french.pkl', 'rb')), 
