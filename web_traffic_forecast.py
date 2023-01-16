@@ -3,12 +3,12 @@ import pandas as pd
 import datetime
 import pickle
 
-models = {'Chinese' : pickle.load(open('.//pickled_models//chinese.pkl', 'rb')), 
-        'French' : pickle.load(open('.//pickled_models//french.pkl', 'rb')), 
-        'German' : pickle.load(open('.//pickled_models//german.pkl', 'rb')),
-        'Spanish' : pickle.load(open('.//pickled_models//spanish.pkl', 'rb')),
-        'Russian' : pickle.load(open('.//pickled_models//russian.pkl', 'rb')),
-        'Japanese' : pickle.load(open('.//pickled_models//japanese.pkl', 'rb'))}
+models = {'Chinese' : pickle.load(open('.\\pickled_models\\chinese.pkl', 'rb')), 
+        'French' : pickle.load(open('.\\pickled_models\\french.pkl', 'rb')), 
+        'German' : pickle.load(open('.\\pickled_models\\german.pkl', 'rb')),
+        'Spanish' : pickle.load(open('.\\pickled_models\\spanish.pkl', 'rb')),
+        'Russian' : pickle.load(open('.\\pickled_models\\russian.pkl', 'rb')),
+        'Japanese' : pickle.load(open('.\\pickled_models\\japanese.pkl', 'rb'))}
 
 st.write(
     """
