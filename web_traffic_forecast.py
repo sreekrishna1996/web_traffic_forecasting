@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import datetime
 import pickle
-import seaborn as sns
 import matplotlib.pyplot as plt
 
 models = {'Chinese' : pickle.load(open('chinese.pkl', 'rb')), 
@@ -64,8 +63,3 @@ with col5:
     """)
 
     st.line_chart(forecast_df.set_index('ds').loc[strt_date:, :])
-
-# fig = plt.figure(figsize=(10, 4))
-# sns.lineplot(data = forecast, x = 'Date', y = 'No.of.views')
-# st.pyplot(fig)
-
