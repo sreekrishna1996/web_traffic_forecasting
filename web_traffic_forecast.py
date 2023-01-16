@@ -3,6 +3,7 @@ import pandas as pd
 import datetime
 import pickle
 import statsmodels
+from prophet import Prophet
 
 models = {'Chinese' : pickle.load(open('chinese.pkl', 'rb')), 
         'French' : pickle.load(open('french.pkl', 'rb')), 
