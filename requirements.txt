@@ -1,6 +1,4 @@
 pandas
 streamlit
-pickle
 statsmodels
-datetime
-prophet
+fbprophet
