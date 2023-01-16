@@ -1,4 +1,4 @@
-## Web Traffic Forescasting
+## Web Traffic Forescasting (Link: https://sreekrishna1996-web-traffic-forecas-web-traffic-forecast-yri83q.streamlit.app/)
 
 ### Business Case: AdEase - Time Series
 
@@ -31,11 +31,16 @@ With the help of given data, I built multiple forecasting models viz. ARIMA, SAR
 6. Decomposed the time series of all the languages into trend, seasonality and errors. Built the line plots for each of these decompositions. From the line plots, I came to know that, almost all the time series had no trend or trend was sideways. Weekly seasonality existed in most of the time series with Saturdays and Sundays having peak number of views.
 
 7. Since, all the modeIs required the data to be stationary, I used the Dickey fuller to test stationarity. If the data was not stationary, I had to deseasonalise it (by differencing a view value with another value which is 7days prior) and detrend it if needed. (by differencing a view value with its immediate previous neighbour).
-8. I clipped the outliers by using the line plots again for each language timeseries.
+
+8. I clipped the outliers by using the line plots.
 
 9. I built multiple forecasting models viz. ARIMA, SARIMAX, and Prophet. I used the ACF and PACF plots to choose the total number of lags (higher limit). I tuned my hyperparameters for best MAPE score on test data. 
 
-10. Depending on the type of language data, either ARIMA, SARIMAX or Prophet gave the best forecast. I got my best forecast of 4.5% on chinese data set using Prophet algorithm.
+10. Depending on the type of language data, either ARIMA, SARIMAX or Prophet gave the best forecast. I got my best forecast of 3.3% on chinese data set using Prophet algorithm. 
+
+11. I also built a pipeline function which can preprocess a given data set and build models end to end. 
+
+12. In the end, I deployed the model on the streamlit cloud.
 
 To whoever reads this, I hope my insights and recommendations from this case study were meaningful.
 
