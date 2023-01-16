@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import datetime
 import pickle
-import statsmodels
-from prophet import Prophet
 
 models = {'Chinese' : pickle.load(open('chinese.pkl', 'rb')), 
         'French' : pickle.load(open('french.pkl', 'rb')), 
@@ -48,19 +46,19 @@ col4, col5 = st.columns(2)
 with col4:
     if lang in ['Chinese', 'French', 'German', 'Spanish']:
         forecast = models[lang].forecast(tot_days)/10**6
-        forecast_df = pd.DataFrame({'ds':dates, 'No.of.views(in 100k)':forecast}).reset_index(drop=True)
-        st.dataframe(forecast_df[forecast_df.ds >= strt_date].reset_index(drop=True), width=500, height=350)
+        forecast_df = pd.DataFrame({'dates':dates, 'No.of.views(in 100k)':forecast}).reset_index(drop=True)
+        st.dataframe(forecast_df[forecast_df.dates >= strt_date].reset_index(drop=True), width=500, height=350)
     else:
         future_dates = models[lang].make_future_dataframe(periods=tot_days,freq="D", include_history = False)
         forecast_df = models[lang].predict(future_dates)[['ds', 'yhat']]
-        forecast_df.rename({'yhat':'No.of.views(in 100k)'}, axis=1, inplace=True)
+        forecast_df.rename({'yhat':'No.of.views(in 100k)', 'ds':'dates'}, axis=1, inplace=True)
         forecast_df['No.of.views(in 100k)'] = forecast_df['No.of.views(in 100k)']/10**6
-        forecast_df['ds'] = dates
-        st.dataframe(forecast_df[forecast_df.ds >= strt_date].reset_index(drop=True), width=500, height=350)
+        forecast_df['dates'] = dates
+        st.dataframe(forecast_df[forecast_df.dates >= strt_date].reset_index(drop=True), width=500, height=350)
 
 with col5:
     st.write(f"""
         #### Date vs No. of views
     """)
 
-    st.line_chart(forecast_df.set_index('ds').loc[strt_date:, :])
+    st.line_chart(forecast_df.set_index('dates').loc[strt_date:, :], width=500, height=350)
