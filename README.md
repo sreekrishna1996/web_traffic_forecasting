@@ -1,4 +1,6 @@
-## Web Traffic Forescasting (Link: https://sreekrishna1996-web-traffic-forecas-web-traffic-forecast-yri83q.streamlit.app/)
+## Web Traffic Forescasting 
+
+(Link: https://sreekrishna1996-web-traffic-forecas-web-traffic-forecast-yri83q.streamlit.app/)
 
 ### Business Case: AdEase - Time Series
 
