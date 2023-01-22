@@ -1,4 +1,4 @@
-## Web Traffic Forescasting  #### ['Streamlit_app'](https://sreekrishna1996-web-traffic-forecas-web-traffic-forecast-yri83q.streamlit.app/)
+## Web Traffic Forescasting ['Streamlit_app_link'](https://sreekrishna1996-web-traffic-forecas-web-traffic-forecast-yri83q.streamlit.app/)
 
 ### Business Case: AdEase - Time Series
 
