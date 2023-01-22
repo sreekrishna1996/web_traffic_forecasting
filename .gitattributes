@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+french.pkl, filter=lfs diff=lfs merge=lfs -text
+german.pkl filter=lfs diff=lfs merge=lfs -text
+pickled_models/french.pkl filter=lfs diff=lfs merge=lfs -text
+pickled_models/german.pkl filter=lfs diff=lfs merge=lfs -text
