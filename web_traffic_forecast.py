@@ -24,21 +24,21 @@ with col1:
 with col2:
     strt_date = st.date_input(
     "Enter Start Date of Forecast",
-    datetime.date(2017, 1, 1),
-    min_value=datetime.date(2017, 1, 1))
+    datetime.date(2016, 12, 1),
+    min_value=datetime.date(2016, 12, 1))
 with col3:
     end_date = st.date_input(
     "Enter End Date of Forecast",
     datetime.date(2017, 6, 30),
-    min_value=datetime.date(2017, 1, 1)) 
+    min_value=datetime.date(2016, 12, 2)) 
 
-tot_days = (end_date - datetime.date(2017, 1, 1)).days # Number of days to forecast
+tot_days = (end_date - datetime.date(2016, 12, 1)).days # Number of days to forecast
 actual_days = (end_date - strt_date).days
 
 dates = [strt_date + datetime.timedelta(days=i) for i in range(tot_days)]
 
 st.write(f"""
-#### {lang} forecast for {actual_days} days
+#### {lang} forecast for {actual_days+1} days
 """)
 
 col4, col5 = st.columns(2)
@@ -47,14 +47,14 @@ with col4:
     if lang in ['Chinese', 'French', 'German', 'Spanish']:
         forecast = models[lang].forecast(tot_days)/10**6
         forecast_df = pd.DataFrame({'dates':dates, 'No.of.views(in 100k)':forecast}).reset_index(drop=True)
-        st.dataframe(forecast_df[forecast_df.dates >= strt_date].reset_index(drop=True), width=500, height=350)
+        st.dataframe(forecast_df[(forecast_df.dates >= strt_date) & (forecast_df.dates <= end_date)].reset_index(drop=True), width=500, height=350)
     else:
         future_dates = models[lang].make_future_dataframe(periods=tot_days,freq="D", include_history = False)
         forecast_df = models[lang].predict(future_dates)[['ds', 'yhat']]
         forecast_df.rename({'yhat':'No.of.views(in 100k)', 'ds':'dates'}, axis=1, inplace=True)
         forecast_df['No.of.views(in 100k)'] = forecast_df['No.of.views(in 100k)']/10**6
         forecast_df['dates'] = dates
-        st.dataframe(forecast_df[forecast_df.dates >= strt_date].reset_index(drop=True), width=500, height=350)
+        st.dataframe(forecast_df[(forecast_df.dates >= strt_date ) & (forecast_df.dates <= end_date)].reset_index(drop=True), width=500, height=350)
 
 with col5:
     st.write(f"""
