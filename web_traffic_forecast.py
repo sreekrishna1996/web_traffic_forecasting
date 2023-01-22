@@ -29,7 +29,7 @@ with col2:
 with col3:
     end_date = st.date_input(
     "Enter End Date of Forecast",
-    datetime.date(2017, 6, 30),
+    datetime.date(2017, 1, 31),
     min_value=datetime.date(2016, 12, 2)) 
 
 tot_days = (end_date - datetime.date(2016, 12, 1)).days # Number of days to forecast
